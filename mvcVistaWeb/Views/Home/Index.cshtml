@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+
+<div class="text-center">
+    <img src="~/logo.png" alt="TicTacToeMasters" width="300" height="180" />
+    <h1 class="display-5">¡Registrate y juega!</h1>
+    <div class="background-transparent">
+        <form asp-controller="Home" asp-action="RegistrarUsuario" method="post" onsubmit="return validarForm()" name="miForm">
+
+            <input class="mb-3 mt-3 centrado" type="text" placeholder="Nombre de Usuario" name="userUsuario" />
+            <input class="mb-3 centrado" type="text" placeholder="Contraseña" name="passUsuario" />
+            <input class="mb-3" type="submit" value="Registrar" />
+
+        </form>
+        <p class="mb-3">¿Ya estás registrado? <b><a href="https://github.com/FrancoPozzettiDV/TTTM-Client" target="_blank">Descarga el juego</a></b></p>
+    </div>
+</div>
+
+<!--
+    <div class="text-center">
+        <h1 class="display-5">Sistema de busqueda de usuarios sin AJAX</h1>
+        <form asp-controller="Home" asp-action="BuscarUsuarioSinAjax" method="post">
+
+            <input type="text" placeholder="Usuario ID" name="usuarioIdSinAjax" />
+            <input type="submit" value="Buscar" />
+
+        </form>
+
+    
+       @{
+/*
+            if (ViewData.ContainsKey("usuario"))
+            {
+
+                Usuario usuario = (Usuario)ViewData["usuario"];
+
+                <p><h3>Usuario encontrado sin AJAX</h3></p>
+                <p><b>ID: </b>@usuario.id</p>
+                <p><b>Nombre: </b>@usuario.nombre</p>
+                <p><b>Contraseña: </b>@usuario.contraseña</p>
+                <p><b>Puntaje: </b>@usuario.puntaje</p>
+                <p><b>Partidas Ganadas: </b>@usuario.partidasGanadas</p>
+                <p><b>Partidas Jugadas: </b>@usuario.partidasJugadas</p>
+
+            }
+*/
+        }
+
+    </div>
+
+    <div class="text-center">
+
+        <h1 class="display-5">Sistema de busqueda de usuarios con AJAX</h1>
+
+        <input type="text" placeholder="Usuario ID" id="usuarioIdConAjax" />
+        <button id="buscarUsuario">Buscar</button>
+
+        <div id="usuario"></div>
+
+    </div>
+
+    -->
