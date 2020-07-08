@@ -30,6 +30,7 @@ namespace mvcVistaWeb.Controllers
             var usuario = UsuarioDAO.getInstancia().getUsuarioById(id);
             return Content(JsonConvert.SerializeObject(usuario),"application/json");
         }
+        //Necesito buscar por nombre para el login. Si dejo ambos gets (por id o por nombre) no sabe cual usar y se rompe.
 */
 
         // GET api/<controller>/franco

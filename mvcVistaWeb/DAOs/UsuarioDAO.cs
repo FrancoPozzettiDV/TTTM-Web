@@ -15,8 +15,10 @@ namespace mvcVistaWeb.DAOs
 
         private UsuarioDAO() {
             usuarios.Add(new Usuario(1, "pepitox", "1234", 1000, 3, 10));
-            usuarios.Add(new Usuario(2, "gabrielox", "1234", 1000, 5, 10));
+            usuarios.Add(new Usuario(2, "gabri", "1234", 1000, 5, 10));
             usuarios.Add(new Usuario(3, "samWicked", "1234", 1000, 10, 15));
+            usuarios.Add(new Usuario(4, "prueba1", "1234", 1000, 0, 0));
+            usuarios.Add(new Usuario(5, "prueba2", "1234", 1000, 0, 0));
         }
 
         public static UsuarioDAO getInstancia() { 
