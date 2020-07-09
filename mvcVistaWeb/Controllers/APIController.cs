@@ -52,7 +52,7 @@ namespace mvcVistaWeb.Controllers
         [HttpPut("{nombre}")]
         public void Put(string nombre, [FromBody]Usuario usuario)
         {
-            UsuarioDAO.getInstancia().modificarUsuario(usuario); //Comprobar si funciona
+            UsuarioDAO.getInstancia().modificarUsuario(usuario);
         }
 /*
         // DELETE api/<controller>/5

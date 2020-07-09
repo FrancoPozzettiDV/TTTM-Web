@@ -40,7 +40,8 @@ namespace mvcVistaWeb.Controllers
             var pass = Convert.ToString(form["passUsuario"]);
 
             // Creo usuario en DAO
-            Usuario usuario = new Usuario(UsuarioDAO.getInstancia().length() + 1, user, pass, 1000, 0, 0);
+            // Si necesita id -> UsuarioDAO.getInstancia().length() + 1,
+            Usuario usuario = new Usuario(user, pass, 1000, 0, 0);
             if(UsuarioDAO.getInstancia().agregarUsuario(usuario) == null)
             {
                 //Insertar codigo

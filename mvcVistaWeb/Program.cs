@@ -33,8 +33,8 @@ namespace mvcVistaWeb
 
         public static void MiPropioMain()
         {
-            //var connString = "Server=localhost;Database=usuarios;Uid=root;Pwd=;";
-            //DBConnection.getInstance().connect(connString);
+            var connString = "Server=localhost;Database=tictactoemasters;Uid=root;Pwd=;";
+            DBConnection.getInstance().connect(connString);
             UsuarioDAO.getInstancia();
 
         }

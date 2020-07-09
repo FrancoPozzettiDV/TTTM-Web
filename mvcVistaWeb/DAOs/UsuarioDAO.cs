@@ -11,14 +11,16 @@ namespace mvcVistaWeb.DAOs
     {
 
         public static UsuarioDAO instancia = null;
-        public List<Usuario> usuarios = new List<Usuario>();
+        //public List<Usuario> usuarios = new List<Usuario>();
 
         private UsuarioDAO() {
+            /*
             usuarios.Add(new Usuario(1, "pepitox", "1234", 1000, 3, 10));
             usuarios.Add(new Usuario(2, "gabri", "1234", 1000, 5, 10));
             usuarios.Add(new Usuario(3, "samWicked", "1234", 1000, 10, 15));
             usuarios.Add(new Usuario(4, "prueba1", "1234", 1000, 0, 0));
             usuarios.Add(new Usuario(5, "prueba2", "1234", 1000, 0, 0));
+            */
         }
 
         public static UsuarioDAO getInstancia() { 
@@ -33,9 +35,9 @@ namespace mvcVistaWeb.DAOs
        
         public List<Usuario> verUsuarios()
         {
-            return usuarios;
+            //return usuarios;
 
-            /*
+            
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
             queryBuilder.setQuery("SELECT * FROM usuarios");
 
@@ -48,11 +50,12 @@ namespace mvcVistaWeb.DAOs
             }
 
             return lista;
-            */
+            
         }
 
         public UsuarioDAO agregarUsuario(Usuario user)
         {
+            /*
             foreach(var us in usuarios)
             {
                 if(us.nombre == user.nombre)
@@ -62,8 +65,8 @@ namespace mvcVistaWeb.DAOs
             }
             usuarios.Add(user);
             return this;
-
-            /*
+            */
+            
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("INSERT INTO usuarios (nombre,contraseña,puntaje,partidasGanadas,partidasJugadas) VALUES (@nombre,@contraseña,@puntaje,@partidasGanadas,@partidasJugadas)");
@@ -74,20 +77,22 @@ namespace mvcVistaWeb.DAOs
             queryBuilder.addParam("@partidasJugadas", user.partidasJugadas);
 
             DBConnection.getInstance().abm(queryBuilder);
-            */
 
+            return this;
         }
 
+        /*
         public int length()
         {
             return usuarios.Count;
         }
+        */
 
         public Usuario getUsuarioById(int id)
         {
-            return usuarios.Find(x => x.id == id);
+            //return usuarios.Find(x => x.id == id);
 
-            /*
+            
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("SELECT * FROM usuarios WHERE id=@id");
@@ -101,14 +106,14 @@ namespace mvcVistaWeb.DAOs
             }
 
             return user;
-            */
+            
         }
 
         public Usuario getUsuarioByNombre(string nombre)
         {
-            return usuarios.Find(x => x.nombre == nombre);
+            //return usuarios.Find(x => x.nombre == nombre);
 
-            /*
+            
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("SELECT * FROM usuarios WHERE nombre=@nombre");
@@ -122,31 +127,32 @@ namespace mvcVistaWeb.DAOs
             }
 
             return user;
-            */
+            
         }
 
         public void eliminarUsuario(int id)
         {
-            usuarios.RemoveAll(x => x.id == id);
+            //usuarios.RemoveAll(x => x.id == id);
 
-            /*
+            
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("DELETE FROM usuarios WHERE id=@id");
             queryBuilder.addParam("@id", id);
 
             DBConnection.getInstance().abm(queryBuilder);
-            */
+            
         }
         
         public void modificarUsuario(Usuario usuario)
         {
+            /*
             Usuario datosViejos = getUsuarioById(usuario.id);
             datosViejos.partidasGanadas = usuario.partidasGanadas;
             datosViejos.partidasJugadas = usuario.partidasJugadas;
             datosViejos.puntaje = usuario.puntaje;
-
-            /*
+            */
+            
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("UPDATE usuarios SET puntaje=@puntaje, partidasGanadas=@partidasGanadas, partidasJugadas=@partidasJugadas WHERE id=@id");
@@ -156,7 +162,7 @@ namespace mvcVistaWeb.DAOs
             queryBuilder.addParam("@partidasJugadas", usuario.partidasJugadas);
 
             DBConnection.getInstance().abm(queryBuilder);
-            */
+            
 
         }
 
