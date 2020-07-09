@@ -15,6 +15,7 @@ namespace mvcVistaWeb.Models
         public int partidasGanadas { get; set; }
         public int partidasJugadas { get; set; }
 
+        //Constructor normal
         public Usuario(int id, string nombre, string contraseña, int puntaje, int partidasGanadas, int partidasJugadas)
         {
             this.id = id;
@@ -24,7 +25,28 @@ namespace mvcVistaWeb.Models
             this.partidasGanadas = partidasGanadas;
             this.partidasJugadas = partidasJugadas;
         }
-
+        //Constructor Base de Datos (sin id)
+        public Usuario(string nombre, string contraseña, int puntaje, int partidasGanadas, int partidasJugadas)
+        {
+            this.nombre = nombre;
+            this.contraseña = contraseña;
+            this.puntaje = puntaje;
+            this.partidasGanadas = partidasGanadas;
+            this.partidasJugadas = partidasJugadas;
+        }
+        //Constructor Juego (sin contraseña)
+        public Usuario(int id, string nombre, int puntaje, int partidasGanadas, int partidasJugadas)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.puntaje = puntaje;
+            this.partidasGanadas = partidasGanadas;
+            this.partidasJugadas = partidasJugadas;
+        }
+        //Constructor Deserializador
+        public Usuario()
+        {
+        }
 
 
     }

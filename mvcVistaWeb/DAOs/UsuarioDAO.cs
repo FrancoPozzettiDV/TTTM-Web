@@ -68,7 +68,7 @@ namespace mvcVistaWeb.DAOs
 
             queryBuilder.setQuery("INSERT INTO usuarios (nombre,contraseña,puntaje,partidasGanadas,partidasJugadas) VALUES (@nombre,@contraseña,@puntaje,@partidasGanadas,@partidasJugadas)");
             queryBuilder.addParam("@nombre", user.nombre);
-            queryBuilder.addParam("@edad", user.contraseña);
+            queryBuilder.addParam("@contraseña", user.contraseña);
             queryBuilder.addParam("@puntaje", user.puntaje);
             queryBuilder.addParam("@partidasGanadas", user.partidasGanadas);
             queryBuilder.addParam("@partidasJugadas", user.partidasJugadas);
